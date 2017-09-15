@@ -24,6 +24,7 @@ use Magento\Framework\Registry;
 use Magento\Framework\Stdlib\DateTime\Filter\Date;
 use Magento\Framework\View\Result\PageFactory;
 use Limesharp\Stockists\Api\StockistRepositoryInterface;
+use Zend\I18n\Validator\Alpha as Alpha;
 
 abstract class Stores extends Action
 {
@@ -87,13 +88,17 @@ abstract class Stores extends Action
      */
     public function filterData($data)
     {
-        $inputFilter = new \Zend_Filter_Input(
-            [],
-            $data
-        );
-        $data = $inputFilter->getUnescaped();
-        
-        return $data;
+
+       /*$trim = new Zend\Filter\StringTrim(',');
+       $trim->filter($data->getAddress());*/
+
+    /*   $validatorCity = new Alpha(array('allowWhiteSpace' => true));
+
+       if ($validator->isValid('prova')==false){
+            $dataError[] ='Check city field';
+       }*/
+
+       return $data;
     }
 
 }

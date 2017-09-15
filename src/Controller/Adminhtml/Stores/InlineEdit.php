@@ -104,9 +104,35 @@ class InlineEdit extends StockistController
             /** @var \Limesharp\Stockists\Model\Stores|StockistInterface $stockist */
             $stockist = $this->stockistRepository->getById((int)$stockistId);
             try {
-                $stockistData = $this->filterData($postItems[$stockistId]);
-                $this->dataObjectHelper->populateWithArray($stockist, $stockistData , StockistInterface::class);
-                $this->stockistResourceModel->saveAttribute($stockist, array_keys($stockistData));
+
+                $errorInfo = '[Stockist ID: ' . $stockist->getId() . '] check insert value';
+
+                $newStockist=$postItems[$stockistId]; 
+                $citt=$newStockist['city'];
+                if(!strlen($newStockist['city'])||!preg_match('/^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/', $citt)){
+                    $errorInfo=$errorInfo .' City';
+                    $error=true;
+                }
+                $newStockist['postcode']=str_replace(" ","", $newStockist['postcode']);
+                if(!strlen($newStockist['postcode'])||!preg_match('/^[A-Z0-9_-]{3,15}$/', $newStockist['postcode'])){
+                    $errorInfo=$errorInfo .' PostCode';       
+                    $error=true;         
+                }
+                if(!strlen($newStockist['link'])||!preg_match('/^[a-zA-Z0-9_-]+(?:[\s-][a-zA-Z0-9_-]+)*$/', $citt)){
+                    $errorInfo=$errorInfo .' Link';
+                    $error=true;
+                }
+
+                if(!$error){
+                    $newStockist['address']=str_replace(",","", $newStockist['address']);
+                    $newStockist['link']=str_replace(" ","", $newStockist['link']);
+                    $this->dataObjectHelper->populateWithArray($stockist, $newStockist , StockistInterface::class);
+                    $this->stockistResourceModel->saveAttribute($stockist, array_keys($newStockist));
+                  
+                }             
+                else{
+                    $messages[]=$errorInfo;
+                }
             } catch (LocalizedException $e) {
                 $messages[] = $this->getErrorWithStockistId($stockist, $e->getMessage());
                 $error = true;
@@ -116,7 +142,7 @@ class InlineEdit extends StockistController
             } catch (\Exception $e) {
                 $messages[] = $this->getErrorWithStockistId(
                     $stockist,
-                    __('Something went wrong while saving the stockist.')
+                    __('Check data input.'.$errorInfo)
                 );
                 $error = true;
             }

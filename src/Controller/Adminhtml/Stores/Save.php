@@ -175,15 +175,14 @@ class Save extends Stores
                     $data['store_id'] = implode(",", $data['store_id']);
                 }
             }
-            $storeId = $data["store_id"] ?? $this->storeManager->getStore()->getId();
+            $storeId = $data['store_id'] ?? $this->storeManager->getStore()->getId();
 
             $this->dataObjectHelper->populateWithArray($stockist, $data, StockistInterface::class);
             $this->stockistRepository->save($stockist);
 
-            if($data["link"]) {
-                $this->saveUrlRewrite($data["link"], $stockist->getId(), $storeId);
+            if($data['link']) {
+                $this->saveUrlRewrite($data['link'], $stockist->getId(), $storeId);
             }
-
             $this->messageManager->addSuccessMessage(__('You saved the store'));
             if ($this->getRequest()->getParam('back')) {
                 $resultRedirect->setPath('stockists/stores/edit', ['stockist_id' => $stockist->getId()]);

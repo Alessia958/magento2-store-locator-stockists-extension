@@ -22,9 +22,7 @@
 .stockists-index-index .main-container .main .row {
     padding: 0 !important;
 }
-.hide{
-	display:none;
-}
+
 
 /* gmaps pin window */
 .stockists-window {
@@ -85,6 +83,7 @@
 /* search sidebar specific */
 .search-stockists.close-up {
     height: 250px;
+
 }
 .search-stockists .search-title {
     font-size: 24px;
@@ -578,7 +577,7 @@
         max-width: 900px;
     }
     .individual-stockists .get-directions {
-        display: none;
+        display: block;
     }
 }
 @media only screen and (min-width: 1120px) {
