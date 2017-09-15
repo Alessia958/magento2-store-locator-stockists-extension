@@ -51,6 +51,10 @@ interface StockistInterface
     const STATION             = 'station';
     const DETAILS_IMAGE       = 'details_image';
     const EXTERNAL_LINK       = 'external_link';
+    const BOOKABLE            ='bookable';
+    const ONLINE              ='online';
+    const CATEGORY            ='category';              
+
 
 
     /**
@@ -208,6 +212,27 @@ interface StockistInterface
      * @return string
      */
     public function getCountry();
+
+    /**
+     * Get online
+     *
+     * @return string
+     */
+     public function getOnline();
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+     public function getCategory();
+
+    /**
+     * Get bookable
+     *
+     * @return string
+     */
+     public function getBookable();
 
     /**
      * set id
@@ -409,12 +434,34 @@ interface StockistInterface
     public function getUpdatedAt();
 
     /**
-     * set updated at
+     *Set updated at
      *
      * @param $updatedAt
      * @return StockistInterface
      */
     public function setUpdatedAt($updatedAt);
+
+    /**
+     * Set online
+     *
+     * @return string
+     */
+     public function setOnline($online);
+
+    /**
+     * Set category
+     * @param $category
+     * @return string
+     */
+     public function setCategory($category);
+
+    /**
+    *Set bookable
+     *
+     * @param $bookable
+     * @return string
+     */
+     public function setBookable($bookable);
 
     /**
      * @param $storeId

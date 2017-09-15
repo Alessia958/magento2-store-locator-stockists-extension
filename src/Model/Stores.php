@@ -409,6 +409,34 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     }
 
     /**
+     * Set online
+     *
+     * @return StockistInterface
+     */
+     public function setOnline($online){
+        return $this->setData(StockistInterface::ONLINE, $online);
+     }
+
+    /**
+     * Set category
+     * @param $category
+     * @return StockistInterface
+     */
+     public function setCategory($category){
+        return $this->setData(StockistInterface::CATEGORY, $category);
+     }
+
+    /**
+    *Set bookable
+     *
+     * @param $bookable
+     * @return StockistInterface
+     */
+     public function setBookable($bookable){
+        return $this->setData(StockistInterface::BOOKABLE, $bookable);
+     }
+
+    /**
      * Get name
      *
      * @return string
@@ -547,7 +575,33 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     {
         return $this->getData(StockistInterface::IMAGE);
     }
-    
+        /**
+     * Get online
+     *
+     * @return string
+     */
+     public function getOnline(){
+        return $this->getData(StockistInterface::ONLINE);
+     }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+     public function getCategory(){
+        return $this->getData(StockistInterface::CATEGORY);
+     }
+
+    /**
+     * Get bookable
+     *
+     * @return string
+     */
+     public function getBookable(){
+        return $this->getData(StockistInterface::BOOKABLE);
+     }
+
     /**
      * @return bool|string
      * @throws LocalizedException

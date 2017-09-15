@@ -114,7 +114,7 @@ class InlineEdit extends StockistController
                     $error=true;
                 }
                 $newStockist['postcode']=str_replace(" ","", $newStockist['postcode']);
-                if(!strlen($newStockist['postcode'])||!preg_match('/^[A-Z0-9_-]{3,15}$/', $newStockist['postcode'])){
+                if(!strlen($newStockist['postcode'])||!preg_match('/^[A-Z0-9_-]{1,15}$/', $newStockist['postcode'])){
                     $errorInfo=$errorInfo .' PostCode';       
                     $error=true;         
                 }

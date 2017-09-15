@@ -175,6 +175,27 @@ class InstallSchema implements InstallSchemaInterface
                     [],
                     'Creation Time'
                 )
+                ->addColumn(
+                    'online',
+                    Table::TYPE_TEXT,
+                    6,
+                    ['nullable'  => false,],
+                    'Online Attribute'
+                )
+                ->addColumn(
+                    'bookable',
+                    Table::TYPE_TEXT,
+                    6,
+                    ['nullable'  => false,],
+                    'Bookable Attribute'
+                )
+                ->addColumn(
+                    'category',
+                    Table::TYPE_TEXT,
+                    255,
+                    ['nullable'  => false,],
+                    'Category'
+                )
                 ->setComment('List of stores');
                 
             $installer->getConnection()->createTable($table);
@@ -197,7 +218,10 @@ class InstallSchema implements InstallSchemaInterface
                     'postcode',
                     'phone',
                     'latitude',
-                    'longitude'
+                    'longitude',
+                    'online',
+                    'bookable',
+                    'category'
                 ],
                 AdapterInterface::INDEX_TYPE_FULLTEXT
             );
