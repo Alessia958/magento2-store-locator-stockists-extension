@@ -357,6 +357,42 @@
                 </item>
             </argument>
         </field>
+        <field name="category">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Limesharp\Stockists\Model\Source\Category</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Category</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="dataScope" xsi:type="string">category</item>
+                </item>
+            </argument>
+        </field> 
+        <field name="online">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Limesharp\Stockists\Model\Source\YesNo</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Online</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="dataScope" xsi:type="string">online</item>
+                </item>
+            </argument>
+        </field> 
+        <field name="bookable">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Limesharp\Stockists\Model\Source\YesNo</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Bookable</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="dataScope" xsi:type="string">bookable</item>
+                </item>
+            </argument>
+        </field> 
     </fieldset>
     <fieldset name="websites" class="Magento\Store\Ui\Component\Form\Fieldset\Websites">
         <argument name="data" xsi:type="array">

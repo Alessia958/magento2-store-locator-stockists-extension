@@ -20,7 +20,7 @@ define([
                     }
                 }
             },
-            search : function(map,config) {                        
+            search : function(map,config, negcheck, boutiquecheck) {                        
 
                 var geocoder = this.geocoderObject();
                 
@@ -41,7 +41,8 @@ define([
                                         position: results[0].geometry.location
                                     });
                                     for (i = 0; i < markers.length; i++) { 
-                                        if (markers[i].global_country == code_country) {
+                                      
+                                        if (markers[i].global_country == code_country ) {
 						                    if(config.unit == "default"){
 						                        var store_distance = parseFloat(distance*0.001).toFixed(2);
 						                        var unitOfLength = "kilometres";
@@ -80,7 +81,7 @@ define([
                                     circle.bindTo('center', marker, 'position');
                                     for (i = 0; i < markers.length; i++) { 
                                         var distance = google.maps.geometry.spherical.computeDistanceBetween(marker.position, markers[i].position);
-                                        if (distance < config.radius) {
+                                        if (distance < config.radius && (markers[i]['category']==negcheck || markers[i]['category']==boutiquecheck) {
 						                    if(config.unit == "default"){
 						                        var store_distance = parseFloat(distance*0.001).toFixed(2);
 						                        var unitOfLength = "kilometres";
@@ -107,14 +108,16 @@ define([
                                     })
                                     .appendTo($wrapper);
                                 }
+                            }     
+                            else {
+                                alert("No stores near your location.");
                             }
                         }
-                        else {
-                            alert("No stores near your location.");
-                        }
+                   
                     }
                 );
             }
+            
         
         }
 

@@ -178,22 +178,22 @@ class InstallSchema implements InstallSchemaInterface
                 ->addColumn(
                     'online',
                     Table::TYPE_TEXT,
-                    6,
-                    ['nullable'  => false,],
+                    255,
+                    [],
                     'Online Attribute'
                 )
                 ->addColumn(
                     'bookable',
                     Table::TYPE_TEXT,
-                    6,
-                    ['nullable'  => false,],
+                   255,
+                   [],
                     'Bookable Attribute'
                 )
                 ->addColumn(
                     'category',
                     Table::TYPE_TEXT,
                     255,
-                    ['nullable'  => false,],
+                    [],
                     'Category'
                 )
                 ->setComment('List of stores');

@@ -38,7 +38,7 @@ define([
 						content: ""
 					});
 
-					function bindInfoWindow(marker, map, infowindow, name, address, city, postcode, telephone, link, external_link, email) {
+					function bindInfoWindow(marker, map, infowindow, category, name, address, city, postcode, telephone, link, external_link, email) {
 						google.maps.event.addListener(marker, 'click', function() {
 							var contentString = '<div class="stockists-window" data-latitude="'+marker.getPosition().lat()+'" data-longitude="'+marker.getPosition().lng()+'"><p class="stockists-title">'+name+'</p>'
                             if (external_link) {
@@ -91,7 +91,7 @@ define([
 						title: config.storeDetails.name
 					});
 
-					bindInfoWindow(marker, map, infowindow, config.storeDetails.name, config.storeDetails.address, config.storeDetails.city, config.storeDetails.postcode, config.storeDetails.phone, config.storeDetails.link, config.storeDetails.external_link, config.storeDetails.email);
+					bindInfoWindow(marker, map, infowindow, config.storeDetails.cateogry, config.storeDetails.name, config.storeDetails.address, config.storeDetails.city, config.storeDetails.postcode, config.storeDetails.phone, config.storeDetails.link, config.storeDetails.external_link, config.storeDetails.email);
 
 				}
 

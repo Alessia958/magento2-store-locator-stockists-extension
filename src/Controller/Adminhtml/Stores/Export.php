@@ -127,7 +127,10 @@ class Export extends Stores
             $content .= '"intro",';
             $content .= '"details_image",';
             $content .= '"distance",';
-            $content .= '"external_link"';
+            $content .= '"external_link",';
+            $content .= '"online",';
+            $content .= '"category",';
+            $content .= '"bookable"';
             $content .= "\n";
 
             $fileName = 'stockists_export.csv';

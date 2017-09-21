@@ -21,8 +21,14 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 
 			// on search show the relevant stores
 			$("#stockists-submit").on("click", function(e) {
-				
-				search_widget.search(map,config);
+				var neg = $('#neg');
+				var negcheck='null';
+				if(neg.is(':checked')){ negcheck='negozio';}
+				var boutique = $('#boutique');
+				var boutiquecheck='null';
+				if(boutique.is(':checked')){ boutiquecheck='boutique';}
+
+				search_widget.search(map,config,negcheck,boutiquecheck);
 				
 			});
 				
@@ -30,7 +36,7 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 				
 				if (e.which == 13) {//Enter key pressed
 					
-					search_widget.search(map,config);
+					search_widget.search(map,config, 'null', 'null');
 				}
 				
 			});
@@ -80,7 +86,7 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 					content: ""
 				});
 				
-				function bindInfoWindow(marker, map, infowindow, name, address, city, postcode, telephone, link, external_link, email) {
+				function bindInfoWindow(marker, map, infowindow, category, name, address, city, postcode, telephone, link, external_link, email) {
 					google.maps.event.addListener(marker, 'click', function() {
 						var contentString = '<div class="stockists-window" data-latitude="'+marker.getPosition().lat()+'" data-longitude="'+marker.getPosition().lng()+'"><p class="stockists-title">'+name+'</p>'
 						if (external_link) {
@@ -135,9 +141,11 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 						icon: image,
 						title: data.name
 					});
+					marker['category']=data.category;
+					debugger;
 					markers.push(marker);
 	
-					bindInfoWindow(marker, map, infowindow, data.name, data.address, data.city, data.postcode, data.phone, data.link, data.external_link, data.email);
+					bindInfoWindow(marker, map, infowindow, data.category, data.name, data.address, data.city, data.postcode, data.phone, data.link, data.external_link, data.email);
 								
 				}
 				

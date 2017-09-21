@@ -58,9 +58,13 @@ if($block->getMapPin()){
                 <p class="stockists-intro"><?php /* @escapeNotVerified */ echo __("Enter a city, country or full post/zip code") ?></p>
                 <input id="stockist-search-term" type="text" placeholder="Search" />
                 <button id="stockists-submit"><?php /* @escapeNotVerified */ echo __("Search") ?></button>
+              
 
             </div>
-
+            <div> 
+                <input id="neg" type="checkbox" name="negozio" value="negozio">Negozio</input>
+                <input id="boutique" type="checkbox" name="boutique" value="boutique">Boutique</input>
+            </div>
             <div class="stockists-results">
 
 

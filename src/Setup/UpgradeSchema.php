@@ -113,6 +113,36 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'comment' => 'External Link'
                     ]
                 );
+                $connection->addColumn(
+                    $table,
+                    'online',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Online Attribute'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'bookable',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Bookable Attribute'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'category',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Bookable Attribute'
+                    ]                
+                );
             }
             $installer->endSetup();
         }
