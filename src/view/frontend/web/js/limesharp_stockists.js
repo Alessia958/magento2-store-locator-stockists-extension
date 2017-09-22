@@ -142,7 +142,7 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 						title: data.name
 					});
 					marker['category']=data.category;
-					debugger;
+		
 					markers.push(marker);
 	
 					bindInfoWindow(marker, map, infowindow, data.category, data.name, data.address, data.city, data.postcode, data.phone, data.link, data.external_link, data.email);

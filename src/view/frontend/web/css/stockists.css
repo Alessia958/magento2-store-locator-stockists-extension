@@ -46,7 +46,7 @@
 .directions-panel,
 .search-stockists {
     background: #ffffff;
-    width: 285px;
+    width: 300px;
     height: 464px;
     padding: 20px 17px 20px 15px;
     right: 100px;
@@ -75,6 +75,7 @@
 	right: 12px;
 	cursor: pointer;
 }
+
 .directions-panel > p{
 	text-align: center;
 	text-transform: uppercase;
@@ -468,6 +469,11 @@
     position: relative;
 }
 @media only screen and (min-width: 768px) {
+    .directions-panel .close{
+        position: relative;
+        float: right;
+        padding-bottom: 10px;
+    }
     .all-stores .all-stores-slider-wrapper .item {
         margin: 0 10px;
     }
@@ -578,6 +584,11 @@
     }
     .individual-stockists .get-directions {
         display: block;
+    }
+    .directions-panel .close{
+        position: relative;
+        float: right;
+        padding-bottom: 10px;
     }
 }
 @media only screen and (min-width: 1120px) {

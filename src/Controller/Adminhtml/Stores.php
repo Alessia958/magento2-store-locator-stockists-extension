@@ -80,25 +80,4 @@ abstract class Stores extends Action
         parent::__construct($context);
     }
 
-    /**
-     * filter dates
-     *
-     * @param array $data
-     * @return array
-     */
-    public function filterData($data)
-    {
-
-       /*$trim = new Zend\Filter\StringTrim(',');
-       $trim->filter($data->getAddress());*/
-
-    /*   $validatorCity = new Alpha(array('allowWhiteSpace' => true));
-
-       if ($validator->isValid('prova')==false){
-            $dataError[] ='Check city field';
-       }*/
-
-       return $data;
-    }
-
 }

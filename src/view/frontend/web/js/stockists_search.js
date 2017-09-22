@@ -81,7 +81,7 @@ define([
                                     circle.bindTo('center', marker, 'position');
                                     for (i = 0; i < markers.length; i++) { 
                                         var distance = google.maps.geometry.spherical.computeDistanceBetween(marker.position, markers[i].position);
-                                        if (distance < config.radius && (markers[i]['category']==negcheck || markers[i]['category']==boutiquecheck) {
+                                        if (distance < config.radius && (markers[i]['category']==negcheck || markers[i]['category']==boutiquecheck)) {
 						                    if(config.unit == "default"){
 						                        var store_distance = parseFloat(distance*0.001).toFixed(2);
 						                        var unitOfLength = "kilometres";
