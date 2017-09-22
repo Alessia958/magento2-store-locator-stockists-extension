@@ -83,7 +83,28 @@ function($,config,mapstyles) {
 						infowindow.open(map, marker);
 					});
 				}
+	
+				var latLng = new google.maps.LatLng(config.storeDetails.latitude,
+					config.storeDetails.longitude);
 
+				var record_id = "" + config.storeDetails.latitude + config.storeDetails.longitude;
+
+				var marker = new google.maps.Marker({
+					record_id: record_id,
+					global_name: config.storeDetails.name,
+					global_address: config.storeDetails.address,
+					global_city: config.storeDetails.city,
+					global_postcode: config.storeDetails.postcode,
+					global_country: config.storeDetails.country,
+					global_image: config.storeDetails.image,
+					global_schedule: config.storeDetails.schedule,
+					global_link: config.storeDetails.link,
+					position: latLng,
+					map:map,
+					icon: image,
+					title: config.storeDetails.name
+				});
+				
 				//take all stores data
 				var length = response.length
 				
@@ -108,51 +129,43 @@ function($,config,mapstyles) {
 						position: latLng,
 						map:map,
 						icon: image,
-						title: data.name
+						title: data.name,
+						distance: google.maps.geometry.spherical.computeDistanceBetween(marker.position, latLng)
 					});
 
 					markers.push(markert);
-				}	
-				debugger;
-				var latLng = new google.maps.LatLng(config.storeDetails.latitude,
-					config.storeDetails.longitude);
-
-				var record_id = "" + config.storeDetails.latitude + config.storeDetails.longitude;
-
-				var marker = new google.maps.Marker({
-					record_id: record_id,
-					global_name: config.storeDetails.name,
-					global_address: config.storeDetails.address,
-					global_city: config.storeDetails.city,
-					global_postcode: config.storeDetails.postcode,
-					global_country: config.storeDetails.country,
-					global_image: config.storeDetails.image,
-					global_schedule: config.storeDetails.schedule,
-					global_link: config.storeDetails.link,
-					position: latLng,
-					map:map,
-					icon: image,
-					title: config.storeDetails.name
-				});
+				}
 				var contentToAppend="";
 
-						for (i = 0; i < markers.length; i++) { 
-							debugger;
-							var distance = google.maps.geometry.spherical.computeDistanceBetween(marker.position, markers[i].position);
+				debugger;
+				function compare(a,b) {
+					if (a.distance < b.distance)
+					  return -1;
+					if (a.distance > b.distance)
+					  return 1;
+					return 0;
+				 }
+				markers.sort(compare);
+
+				if(markers.length>0){
+					
+					$('.all-stores-title').append("<p>View Our Other Stores</p>");
+				}
+				for (i = 0; i < markers.length; i++) { 
 							
-							if (distance < config.radius && markers[i].global_country == marker.global_country && markers[i].record_id!=marker.record_id) {
+
+					if (markers[i].global_country == marker.global_country && markers[i].record_id!=marker.record_id) {
 				
-								contentToAppend += " <div class='item'> <div class='image'>";
-								contentToAppend += "<img src='"+markers[i].global_image+ "' alt='"+markers[i].global_address + "'/>";
-								contentToAppend +="</div>";
+						contentToAppend += " <div class='item'> <div class='image'>";
+						contentToAppend += "<img src='"+markers[i].global_image+ "' alt='"+markers[i].global_address + "'/>";
+						contentToAppend +="</div>";
 													
-								contentToAppend +="<a href='"+markers[i].global_link+"'class='individual-store-link'>"+
-										"<div class='details'><p>"+markers[i].global_name+"</p></div></a>"
-						
-								contentToAppend +="</div>";	
+						contentToAppend +="<a href='"+markers[i].global_link+"'class='individual-store-link'>"+
+									"<div class='details'><p>"+markers[i].global_name+"</p></div></a>"
+						contentToAppend +="</div>";	
 												
-							}
-						}
+					}
+				}
 
 				$('.all-stores-slider-wrapper').append(contentToAppend);
 			
