@@ -42,7 +42,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         if ($installer->tableExists('limesharp_stockists_stores')) {
             $table = $installer->getTable('limesharp_stockists_stores');
             $connection = $installer->getConnection();
-            if (version_compare($context->getVersion(), '2.0.0') < 0) {
+            if (version_compare($context->getVersion(), '2.0.0') != 0) {
                 $connection->addColumn(
                     $table,
                     'schedule',
