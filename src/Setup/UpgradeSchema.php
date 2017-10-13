@@ -55,6 +55,77 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 );
                 $connection->addColumn(
                     $table,
+                    'schedule_monday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'schedule_tuesday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'schedule_wednesday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'schedule_thursday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+
+                $connection->addColumn(
+                    $table,
+                    'schedule_friday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'schedule_saturday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
+                    'schedule_sunday',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Schedule'
+                    ]
+                );
+                $connection->addColumn(
+                    $table,
                     'station',
                     [
                         'type' => Table::TYPE_TEXT,

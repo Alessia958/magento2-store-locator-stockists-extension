@@ -54,7 +54,13 @@ interface StockistInterface
     const BOOKABLE            ='bookable';
     const ONLINE              ='online';
     const CATEGORY            ='category';              
-
+    const SCHEDULE_MONDAY     ='schedule_monday';
+    const SCHEDULE_TUESDAY    ='schedule_tuesday';
+    const SCHEDULE_WEDNESDAY  ='schedule_wednesday';    
+    const SCHEDULE_THURSDAY   ='schedule_thursday';
+    const SCHEDULE_FRIDAY     ='schedule_friday';
+    const SCHEDULE_SATURDAY   ='schedule_saturday';    
+    const SCHEDULE_SUNDAY     ='schedule_sunday';   
 
 
     /**
@@ -290,7 +296,6 @@ interface StockistInterface
      */
     public function setPostcode($postcode);
 
-
     /**
      * set schedule
      *
@@ -300,11 +305,119 @@ interface StockistInterface
     public function setSchedule($schedule);
 
     /**
+     * set schedule_monday
+     *
+     * @param $schedule_monday
+     * @return StockistInterface
+     */
+     public function setScheduleMonday($schedule_monday);
+
+     /**
+    *Get schedule_monday
+     *
+     * @return string
+     */
+     public function getScheduleMonday();
+
+     /**
+     * set schedule_tuesday
+     *
+     * @param $schedule_tuesday
+     * @return StockistInterface
+     */
+    public function setScheduleTuesday($schedule_tuesday);
+
+    /**
+    *Get schedule_tuesday
+     *
+     * @return string
+     */
+     public function getScheduleTuesday();
+
+     
+    /**
+     * set schedule_wednesday
+     *
+     * @param $schedule_wednesday
+     * @return StockistInterface
+     */
+     public function setScheduleWednesday($schedule_wednesday);
+
+    /**
+    *Get schedule_wednesday
+     *
+     * @return string
+     */
+     public function getScheduleWednesday();
+     
+    /**
+     * set schedule_thursday
+     *
+     * @param $schedule_thursday
+     * @return StockistInterface
+     */
+    public function setScheduleThursday($schedule_thursday);
+   
+    /**
+    *Get schedule_thursday
+     *
+     * @return string
+     */
+     public function getScheduleThursday();
+     
+    
+    /**
+     * set schedule_friday
+     *
+     * @param $schedule_friday
+     * @return StockistInterface
+     */
+     public function setScheduleFriday($schedule_friday);
+
+    /**
+    *Get schedule_friday
+     *
+     * @return string
+     */
+     public function getScheduleFriday();
+
+    /**
+     * set schedule_saturday
+     *
+     * @param $schedule_saturday
+     * @return StockistInterface
+     */
+    public function setScheduleSaturday($schedule_saturday);
+
+    /**
+    *Get schedule_saturday
+     *
+     * @return string
+     */
+     public function getScheduleSaturday();
+     
+    /**
+     * set schedule_sunday
+     *
+     * @param $schedule_sunday
+     * @return StockistInterface
+     */
+     public function setScheduleSunday($schedule_sunday);
+
+    /**
+    *Get schedule_sunday
+     *
+     * @return string
+     */
+     public function getScheduleSunday();
+     
+    /**
      * set description
      *
      * @param $description
      * @return StockistInterface
      */
+
     public function setDescription($description);
 
     /**

@@ -437,6 +437,142 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      }
 
     /**
+    *Set schedule_monday
+     *
+     * @param $schedule_monday
+     * @return StockistInterface
+     */
+     public function setScheduleMonday($schedule_monday){
+        return $this->setData(StockistInterface::SCHEDULE_MONDAY, $schedule_monday);
+     }
+
+    /**
+    *Get schedule_monday
+     *
+     * @return string
+     */
+     public function getScheduleMonday(){
+        return $this->getData(StockistInterface::SCHEDULE_MONDAY);
+     }
+
+    /**
+    *Set schedule_tuesday
+     *
+     * @param $schedule_tuesday
+     * @return StockistInterface
+     */
+     public function setScheduleTuesday($schedule_tuesday){
+        return $this->setData(StockistInterface::SCHEDULE_TUESDAY, $schedule_tuesday);
+     }
+
+    /**
+    *Get schedule_tuesday
+     *
+     * @return string
+     */
+     public function getScheduleTuesday(){
+        return $this->getData(StockistInterface::SCHEDULE_TUESDAY);
+     }
+
+    /**
+    *Set schedule_wednesday
+     *
+     * @param $schedule_wednesday
+     * @return StockistInterface
+     */
+     public function setScheduleWednesday($schedule_wednesday){
+        return $this->setData(StockistInterface::SCHEDULE_WEDNESDAY, $schedule_wednesday);
+     }
+
+    /**
+    *Get schedule_wednesday
+     *
+     * @return string
+     */
+     public function getScheduleWednesday(){
+        return $this->getData(StockistInterface::SCHEDULE_WEDNESDAY);
+     }
+
+
+    /**
+    *Set schedule_thursday
+     *
+     * @param $schedule_thursday
+     * @return StockistInterface
+     */
+     public function setScheduleThursday($schedule_thursday){
+        return $this->setData(StockistInterface::SCHEDULE_THURSDAY, $schedule_thursday);
+     }
+
+
+    /**
+    *Get schedule_thursday
+     *
+     * @return string
+     */
+     public function getScheduleThursday(){
+        return $this->getData(StockistInterface::SCHEDULE_THURSDAY);
+     }
+
+    /**
+    *Set schedule_friday
+     *
+     * @param $schedule_friday
+     * @return StockistInterface
+     */
+     public function setScheduleFriday($schedule_friday){
+        return $this->setData(StockistInterface::SCHEDULE_FRIDAY, $schedule_friday);
+     }
+
+    /**
+    *Get schedule_friday
+     *
+     * @return string
+     */
+     public function getScheduleFriday(){
+        return $this->getData(StockistInterface::SCHEDULE_FRIDAY);
+     }     
+
+    /**
+    *Set schedule_saturday
+     *
+     * @param $schedule_saturday
+     * @return StockistInterface
+     */
+     public function setScheduleSaturday($schedule_saturday){
+        return $this->setData(StockistInterface::SCHEDULE_SATURDAY, $schedule_saturday);
+     }
+
+    /**
+    *Get schedule_saturday
+     *
+     * @return string
+     */
+     public function getScheduleSaturday(){
+        return $this->getData(StockistInterface::SCHEDULE_SATURDAY);
+     } 
+
+    /**
+    *Set schedule_sunday
+     *
+     * @param $schedule_sunday
+     * @return StockistInterface
+     */
+     public function setScheduleSunday($schedule_sunday){
+        return $this->setData(StockistInterface::SCHEDULE_SUNDAY, $schedule_sunday);
+     }
+
+    /**
+    *Get schedule_sunday
+     *
+     * @return string
+     */
+     public function getScheduleSunday(){
+        return $this->getData(StockistInterface::SCHEDULE_SUNDAY);
+     } 
+
+
+    /**
      * Get name
      *
      * @return string

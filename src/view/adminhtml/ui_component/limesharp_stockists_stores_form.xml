@@ -241,19 +241,6 @@
                 </item>
             </argument>
         </field>
-        <field name="schedule">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Schedule</item>
-                    <item name="formElement" xsi:type="string">textarea</item>
-                    <item name="source" xsi:type="string">stores</item>
-                    <item name="sortOrder" xsi:type="number">20</item>
-                    <item name="dataScope" xsi:type="string">schedule</item>
-                    <item name="notice" xsi:type="string" translate="true">Use \n at the end of each day if you want it to break it by day</item>
-                </item>
-            </argument>
-        </field>
         <field name="image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -286,7 +273,7 @@
                     <item name="label" xsi:type="string" translate="true">Internal Link</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">stores</item>
-                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="sortOrder" xsi:type="number">28</item>
                     <item name="dataScope" xsi:type="string">link</item>
                     <item name="notice" xsi:type="string" translate="true">If you want a store details page on the same website enter your url here. If the final url is www.website.com/stockists/waterloo then you need to enter only waterloo.</item>
                 </item>
@@ -299,7 +286,7 @@
                     <item name="label" xsi:type="string" translate="true">Nearest Station</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">stores</item>
-                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="sortOrder" xsi:type="number">29</item>
                     <item name="dataScope" xsi:type="string">station</item>
                 </item>
             </argument>
@@ -393,6 +380,105 @@
                 </item>
             </argument>
         </field> 
+    </fieldset>
+    <fieldset name="Schedule">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Store Schedule</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="schedule_monday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Monday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">21</item>
+                    <item name="dataScope" xsi:type="string">schedule_monday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_tuesday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Tuesday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">22</item>
+                    <item name="dataScope" xsi:type="string">schedule_tuesday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_wednesday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Wednesday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">23</item>
+                    <item name="dataScope" xsi:type="string">schedule_wednesday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_thursday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Thursday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">24</item>
+                    <item name="dataScope" xsi:type="string">schedule_thursday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_friday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Friday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">25</item>
+                    <item name="dataScope" xsi:type="string">schedule_friday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_saturday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Saturday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">26</item>
+                    <item name="dataScope" xsi:type="string">schedule_saturday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
+        <field name="schedule_sunday">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Sunday</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">27</item>
+                    <item name="dataScope" xsi:type="string">schedule_sunday</item>
+                    <item name="notice" xsi:type="string" translate="true">Use format: 08:00 - 15:00</item>
+                </item>
+            </argument>
+        </field>
     </fieldset>
     <fieldset name="websites" class="Magento\Store\Ui\Component\Form\Fieldset\Websites">
         <argument name="data" xsi:type="array">
