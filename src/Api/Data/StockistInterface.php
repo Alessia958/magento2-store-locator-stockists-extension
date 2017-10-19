@@ -51,17 +51,18 @@ interface StockistInterface
     const STATION             = 'station';
     const DETAILS_IMAGE       = 'details_image';
     const EXTERNAL_LINK       = 'external_link';
-    const BOOKABLE            ='bookable';
-    const ONLINE              ='online';
-    const CATEGORY            ='category';              
-    const SCHEDULE_MONDAY     ='schedule_monday';
-    const SCHEDULE_TUESDAY    ='schedule_tuesday';
-    const SCHEDULE_WEDNESDAY  ='schedule_wednesday';    
-    const SCHEDULE_THURSDAY   ='schedule_thursday';
-    const SCHEDULE_FRIDAY     ='schedule_friday';
-    const SCHEDULE_SATURDAY   ='schedule_saturday';    
-    const SCHEDULE_SUNDAY     ='schedule_sunday';   
-
+    const BOOKABLE            = 'bookable';
+    const ONLINE              = 'online';
+    const CATEGORY            = 'category';
+    const SCHEDULE_MONDAY     = 'schedule_monday';
+    const SCHEDULE_TUESDAY    = 'schedule_tuesday';
+    const SCHEDULE_WEDNESDAY  = 'schedule_wednesday';
+    const SCHEDULE_THURSDAY   = 'schedule_thursday';
+    const SCHEDULE_FRIDAY     = 'schedule_friday';
+    const SCHEDULE_SATURDAY   = 'schedule_saturday';
+    const SCHEDULE_SUNDAY     = 'schedule_sunday';
+    const PRIORITY            = 'priority';
+    const INFLUENTIAL         = 'influential';
 
     /**
      * Get ID
@@ -224,21 +225,21 @@ interface StockistInterface
      *
      * @return string
      */
-     public function getOnline();
+    public function getOnline();
 
     /**
      * Get category
      *
      * @return string
      */
-     public function getCategory();
+    public function getCategory();
 
     /**
      * Get bookable
      *
      * @return string
      */
-     public function getBookable();
+    public function getBookable();
 
     /**
      * set id
@@ -310,14 +311,14 @@ interface StockistInterface
      * @param $schedule_monday
      * @return StockistInterface
      */
-     public function setScheduleMonday($schedule_monday);
+    public function setScheduleMonday($schedule_monday);
 
      /**
     *Get schedule_monday
      *
      * @return string
      */
-     public function getScheduleMonday();
+    public function getScheduleMonday();
 
      /**
      * set schedule_tuesday
@@ -332,7 +333,7 @@ interface StockistInterface
      *
      * @return string
      */
-     public function getScheduleTuesday();
+    public function getScheduleTuesday();
 
      
     /**
@@ -341,14 +342,14 @@ interface StockistInterface
      * @param $schedule_wednesday
      * @return StockistInterface
      */
-     public function setScheduleWednesday($schedule_wednesday);
+    public function setScheduleWednesday($schedule_wednesday);
 
     /**
     *Get schedule_wednesday
      *
      * @return string
      */
-     public function getScheduleWednesday();
+    public function getScheduleWednesday();
      
     /**
      * set schedule_thursday
@@ -363,7 +364,7 @@ interface StockistInterface
      *
      * @return string
      */
-     public function getScheduleThursday();
+    public function getScheduleThursday();
      
     
     /**
@@ -372,14 +373,14 @@ interface StockistInterface
      * @param $schedule_friday
      * @return StockistInterface
      */
-     public function setScheduleFriday($schedule_friday);
+    public function setScheduleFriday($schedule_friday);
 
     /**
     *Get schedule_friday
      *
      * @return string
      */
-     public function getScheduleFriday();
+    public function getScheduleFriday();
 
     /**
      * set schedule_saturday
@@ -394,7 +395,7 @@ interface StockistInterface
      *
      * @return string
      */
-     public function getScheduleSaturday();
+    public function getScheduleSaturday();
      
     /**
      * set schedule_sunday
@@ -402,14 +403,14 @@ interface StockistInterface
      * @param $schedule_sunday
      * @return StockistInterface
      */
-     public function setScheduleSunday($schedule_sunday);
+    public function setScheduleSunday($schedule_sunday);
 
     /**
     *Get schedule_sunday
      *
      * @return string
      */
-     public function getScheduleSunday();
+    public function getScheduleSunday();
      
     /**
      * set description
@@ -559,14 +560,14 @@ interface StockistInterface
      *
      * @return string
      */
-     public function setOnline($online);
+    public function setOnline($online);
 
     /**
      * Set category
      * @param $category
      * @return string
      */
-     public function setCategory($category);
+    public function setCategory($category);
 
     /**
     *Set bookable
@@ -574,8 +575,38 @@ interface StockistInterface
      * @param $bookable
      * @return string
      */
-     public function setBookable($bookable);
+    public function setBookable($bookable);
 
+    /**
+    *Set priority
+     *
+     * @param $priority
+     * @return int[]
+     */
+    public function setPriority($priority);
+     
+    /**
+    *Set influential
+     *
+     * @param $influential
+     * @return string
+     */
+    public function setInfluential($influential);
+     
+     /**
+     * Get priority
+     *
+     * @return int[]
+     */
+    public function getPriority();
+     
+    /**
+     * Get influential
+     *
+     * @return string
+     */
+    public function getInfluential();
+    
     /**
      * @param $storeId
      * @return StockistInterface
@@ -586,5 +617,4 @@ interface StockistInterface
      * @return int[]
      */
     public function getStoreId();
-
 }

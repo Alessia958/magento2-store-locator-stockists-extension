@@ -739,6 +739,44 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      }
 
     /**
+    *Set priority
+     *
+     * @param $priority
+     * @return int[]
+     */
+     public function setPriority($priority){
+        return $this->setData(StockistInterface::PRIORITY, $priority);
+     }
+     
+    /**
+    *Set influential
+     *
+     * @param $influential
+     * @return string
+     */
+    public function setInfluential($influential){
+        return $this->setData(StockistInterface::INFLUENTIAL, $influential);
+    }
+     
+     /**
+     * Get priority
+     *
+     * @return int[]
+     */
+    public function getPriority(){
+        return $this->getData(StockistInterface::PRIORITY);
+    }
+     
+    /**
+     * Get influential
+     *
+     * @return string
+     */
+    public function getInfluential(){   
+        return $this->getData(StockistInterface::INFLUENTIAL);
+    }
+
+    /**
      * @return bool|string
      * @throws LocalizedException
      */

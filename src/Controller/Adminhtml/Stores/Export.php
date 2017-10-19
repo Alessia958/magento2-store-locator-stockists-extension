@@ -131,9 +131,18 @@ class Export extends Stores
             $content .= '"online",';
             $content .= '"category",';
             $content .= '"bookable"';
+            $content .= '"schedule_monday"';
+            $content .= '"schedule_tuesday"';
+            $content .= '"schedule_wednesday"';
+            $content .= '"schedule_thursday"';
+            $content .= '"schedule_friday"';
+            $content .= '"schedule_saturday"';
+            $content .= '"schedule_sunday"';
+            $content .= '"priority"';
+            $content .= '"influential"';
             $content .= "\n";
 
-            $fileName = 'stockists_export.csv';
+            $fileName = 'store_bicego.csv';
             $collection = $this->collectionFactory->create()->getData();
             
             foreach ($collection as $stockist) {

@@ -203,7 +203,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'nullable' => true,
                         'comment' => 'Bookable Attribute'
                     ]
-                );
+                );          
                 $connection->addColumn(
                     $table,
                     'category',
@@ -212,6 +212,26 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'length' => 255,
                         'nullable' => true,
                         'comment' => 'Bookable Attribute'
+                    ]                
+                );
+                $connection->addColumn(
+                    $table,
+                    'priority',
+                    [
+                        'type' => Table::TYPE_INTEGER,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Priority Attribute'
+                    ]              
+                );
+                $connection->addColumn(
+                    $table,
+                    'influential',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Influential Attribute'
                     ]                
                 );
             }
