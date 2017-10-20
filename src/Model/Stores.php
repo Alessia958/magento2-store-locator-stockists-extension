@@ -757,7 +757,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     public function setInfluential($influential){
         return $this->setData(StockistInterface::INFLUENTIAL, $influential);
     }
-     
+
+    /**
+    *Set promoted
+     *
+     * @param $promoted
+     * @return string
+     */
+    public function setPromoted($promoted){
+        return $this->setData(StockistInterface::PROMOTED, $promoted);
+    }
+	
      /**
      * Get priority
      *
@@ -774,6 +784,15 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      */
     public function getInfluential(){   
         return $this->getData(StockistInterface::INFLUENTIAL);
+    }
+
+	/**
+     * Get promoted
+     *
+     * @return string
+     */
+    public function getPromoted(){   
+        return $this->getData(StockistInterface::PROMOTED);
     }
 
     /**

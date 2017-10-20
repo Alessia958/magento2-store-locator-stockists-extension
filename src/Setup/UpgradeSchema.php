@@ -234,6 +234,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'comment' => 'Influential Attribute'
                     ]                
                 );
+                $connection->addColumn(
+                    $table,
+                    'promoted',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Promoted Attribute'
+                    ]                
+                );
             }
             $installer->endSetup();
         }

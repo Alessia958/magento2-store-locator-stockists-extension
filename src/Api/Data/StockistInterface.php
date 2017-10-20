@@ -63,6 +63,7 @@ interface StockistInterface
     const SCHEDULE_SUNDAY     = 'schedule_sunday';
     const PRIORITY            = 'priority';
     const INFLUENTIAL         = 'influential';
+    const PROMOTED         = 'promoted';
 
     /**
      * Get ID
@@ -592,6 +593,14 @@ interface StockistInterface
      * @return string
      */
     public function setInfluential($influential);
+	
+    /**
+     * Set promoted
+     *
+     * @param $promoted
+     * @return string
+     */
+	public function setPromoted($promoted);
      
      /**
      * Get priority
@@ -606,6 +615,13 @@ interface StockistInterface
      * @return string
      */
     public function getInfluential();
+
+    /**
+     * Get promoted
+     *
+     * @return string
+     */
+    public function getPromoted();
     
     /**
      * @param $storeId

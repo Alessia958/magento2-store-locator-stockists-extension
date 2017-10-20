@@ -140,6 +140,7 @@ class Export extends Stores
             $content .= '"schedule_sunday"';
             $content .= '"priority"';
             $content .= '"influential"';
+            $content .= '"promoted"';
             $content .= "\n";
 
             $fileName = 'store_bicego.csv';
