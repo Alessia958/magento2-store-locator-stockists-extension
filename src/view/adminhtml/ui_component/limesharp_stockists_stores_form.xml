@@ -417,7 +417,7 @@
                     <item name="label" xsi:type="string" translate="true">Promoted</item>
                     <item name="formElement" xsi:type="string">checkbox</item>
                     <item name="prefer" xsi:type="string">toggle</item>
-                    <item name="source" xsi:type="string">16</item>
+                    <item name="source" xsi:type="string">stores</item>
                     <item name="sortOrder" xsi:type="number">30</item>
                     <item name="dataScope" xsi:type="string">promoted</item>
                     <item name="valueMap" xsi:type="array">
