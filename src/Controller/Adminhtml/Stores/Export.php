@@ -130,18 +130,19 @@ class Export extends Stores
             $content .= '"external_link",';
             $content .= '"online",';
             $content .= '"category",';
-            $content .= '"bookable"';
-            $content .= '"schedule_monday"';
-            $content .= '"schedule_tuesday"';
-            $content .= '"schedule_wednesday"';
-            $content .= '"schedule_thursday"';
-            $content .= '"schedule_friday"';
-            $content .= '"schedule_saturday"';
-            $content .= '"schedule_sunday"';
-            $content .= '"priority"';
-            $content .= '"influential"';
+            $content .= '"bookable",';
+            $content .= '"schedule_monday",';
+            $content .= '"schedule_tuesday",';
+            $content .= '"schedule_wednesday",';
+            $content .= '"schedule_thursday",';
+            $content .= '"schedule_friday",';
+            $content .= '"schedule_saturday",';
+            $content .= '"schedule_sunday",';
+            $content .= '"priority",';
+            $content .= '"influential",';
             $content .= '"promoted"';
             $content .= "\n";
+
 
             $fileName = 'store_bicego.csv';
             $collection = $this->collectionFactory->create()->getData();
