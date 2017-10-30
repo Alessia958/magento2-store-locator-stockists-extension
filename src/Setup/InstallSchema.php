@@ -219,6 +219,9 @@ class InstallSchema implements InstallSchemaInterface
                     'phone',
                     'latitude',
                     'longitude',
+                    'status',
+                    'updated_at',
+                    'created_at',
                     'online',
                     'bookable',
                     'category'

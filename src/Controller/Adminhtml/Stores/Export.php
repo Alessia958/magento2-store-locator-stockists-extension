@@ -143,7 +143,6 @@ class Export extends Stores
             $content .= '"promoted"';
             $content .= "\n";
 
-
             $fileName = 'store_bicego.csv';
             $collection = $this->collectionFactory->create()->getData();
             
