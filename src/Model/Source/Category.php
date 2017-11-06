@@ -10,6 +10,6 @@ class Category implements \Magento\Framework\Option\ArrayInterface
     public function toOptionArray()
     {
         // return your data
-        return [['value' => 'boutique', 'label' => __('boutique')], ['value' => 'negozio', 'label' => __('negozio')]];
+        return [['value' => 'boutique', 'label' => __('boutique')], ['value' => 'shop', 'label' => __('shop')]];
     }
 }

@@ -23,7 +23,7 @@ function($,config,country_list,mapstyles,search_widget,currentLocation) {
 			$("#stockists-submit").on("click", function(e) {
 				var neg = $('#neg');
 				var negcheck='null';
-				if(neg.is(':checked')){ negcheck='negozio';}
+				if(neg.is(':checked')){ negcheck='shop';}
 				var boutique = $('#boutique');
 				var boutiquecheck='null';
 				if(boutique.is(':checked')){ boutiquecheck='boutique';}
