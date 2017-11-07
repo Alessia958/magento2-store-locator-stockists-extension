@@ -711,6 +711,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     {
         return $this->getData(StockistInterface::IMAGE);
     }
+    
+    /**
+     * Get second image
+     *
+     * @return string
+     */
+     public function getSecondImage()
+     {
+         return $this->getData(StockistInterface::SECOND_IMAGE);
+     }
+
         /**
      * Get online
      *
@@ -837,6 +848,27 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
         return $url;
     }
 
+        /**
+     * @return bool|string
+     * @throws LocalizedException
+     */
+     public function getSecondImageUrl()
+     {
+         $url = false;
+         $image = $this->getSecondImage();
+         if ($image) {
+             if (is_string($image)) {
+                 $uploader = $this->uploaderPool->getUploader('image');
+                 $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
+             } else {
+                 throw new LocalizedException(
+                     __('Something went wrong while getting the second image url.')
+                 );
+             }
+         }
+         return $url;
+     }
+
     /**
      * Get external link
      *
@@ -857,6 +889,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     {
         return $this->setData(StockistInterface::DETAILS_IMAGE, $details_image);
     }
+
+    /**
+     * set second image
+     *
+     * @param $second_image
+     * @return StockistInterface
+     */
+     public function setSecondImage($second_image)
+     {
+         return $this->setData(StockistInterface::SECOND_IMAGE, $second_image);
+     }
 
     /**
      * Get phone

@@ -141,6 +141,7 @@ class Export extends Stores
             $content .= '"priority",';
             $content .= '"influential",';
             $content .= '"promoted"';
+            $content .= '"second_image"';
             $content .= "\n";
 
             $fileName = 'store_bicego.csv';

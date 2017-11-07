@@ -64,6 +64,7 @@ interface StockistInterface
     const PRIORITY            = 'priority';
     const INFLUENTIAL         = 'influential';
     const PROMOTED         = 'promoted';
+    const SECOND_IMAGE       = 'second_image';
 
     /**
      * Get ID
@@ -122,6 +123,12 @@ interface StockistInterface
      */
     public function getDetailsImage();
 
+    /**
+     * Get store second image
+     *
+     * @return string
+     */
+     public function getSecondImage();
 
     /**
      * Get name
@@ -461,6 +468,14 @@ interface StockistInterface
      * @return StockistInterface
      */
     public function setDetailsImage($details_image);
+
+    /**
+     * set store second image
+     *
+     * @param $second_image
+     * @return StockistInterface
+     */
+     public function setSecondImage($second_image);
 
     /**
      * set region

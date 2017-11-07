@@ -214,6 +214,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'comment' => 'Promoted Attribute'
                     ]                
                 );
+                $connection->addColumn(
+                    $table,
+                    'second_image',
+                    [
+                        'type' => Table::TYPE_TEXT,
+                        'length' => 255,
+                        'nullable' => true,
+                        'comment' => 'Second Image'
+                    ]
+                );
             }
             $installer->endSetup();
         }

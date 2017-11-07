@@ -70,6 +70,12 @@ class StoresData implements ModifierInterface
                 $image[0]['url'] = $stockist->getDetailsImageUrl();
                 $_data['details_image'] = $image;
             }
+			if (isset($_data['second_image'])) {
+                $image = [];
+                $image[0]['name'] = $stockist->getSecondImage();
+                $image[0]['url'] = $stockist->getSecondImageUrl();
+                $_data['second_image'] = $image;
+            }
             $stockist->setData($_data);
             $data[$stockist->getId()] = $_data;
         }
