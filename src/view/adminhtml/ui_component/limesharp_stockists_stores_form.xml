@@ -241,36 +241,19 @@
                 </item>
             </argument>
         </field>
-        <field name="image">
+        <field name="header_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="source" xsi:type="string">stores</item>
-                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="label" xsi:type="string" translate="true">Header Image</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="formElement" xsi:type="string">fileUploader</item>
                     <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
                     <item name="previewTmpl" xsi:type="string">Limesharp_Stockists/image-preview</item>
                     <item name="required" xsi:type="boolean">false</item>
                     <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/image"/>
-                    </item>
-                </item>
-            </argument>
-        </field>
-        <field name="second_image">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">string</item>
-                    <item name="source" xsi:type="string">stores</item>
-                    <item name="label" xsi:type="string" translate="true">Second Image</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="formElement" xsi:type="string">fileUploader</item>
-                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
-                    <item name="previewTmpl" xsi:type="string">Limesharp_Stockists/image-preview</item>
-                    <item name="required" xsi:type="boolean">false</item>
-                    <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/second_image"/>
+                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/header_image"/>
                     </item>
                 </item>
             </argument>
@@ -332,19 +315,36 @@
                 </item>
             </argument>
         </field>
-        <field name="details_image">
+        <field name="left_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="source" xsi:type="string">stores</item>
-                    <item name="label" xsi:type="string" translate="true">Store Details Image</item>
+                    <item name="label" xsi:type="string" translate="true">Left Image</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="formElement" xsi:type="string">fileUploader</item>
                     <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
                     <item name="previewTmpl" xsi:type="string">Limesharp_Stockists/image-preview</item>
                     <item name="required" xsi:type="boolean">false</item>
                     <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/details_image"/>
+                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/second_image"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="right_image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="label" xsi:type="string" translate="true">Right Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Limesharp_Stockists/image-preview</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/right_image"/>
                     </item>
                 </item>
             </argument>

@@ -43,7 +43,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $table = $installer->getTable('limesharp_stockists_stores');
             $connection = $installer->getConnection();
             if (version_compare($context->getVersion(), '2.0.0') != 0) {
-                $connection->addColumn(
+               $connection->addColumn(
                     $table,
                     'schedule',
                     [
@@ -154,16 +154,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'comment' => 'Intro'
                     ]
                 );
-                $connection->addColumn(
-                    $table,
-                    'details_image',
-                    [
-                        'type' => Table::TYPE_TEXT,
-                        'length' => 255,
-                        'nullable' => true,
-                        'comment' => 'Details Image'
-                    ]
-                );
+
                 $connection->addColumn(
                     $table,
                     'distance',
@@ -214,18 +205,72 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         'comment' => 'Promoted Attribute'
                     ]                
                 );
-                $connection->addColumn(
+
+                if ($connection->tableColumnExists($table, 'second_image') == true){
+                    $connection->changeColumn(
+                        $table,
+                        'second_image',
+                        'left_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Left Image'
+                        ]
+                    );
+                }
+                else{
+                    $connection->addColumn(
+                        $table,
+                        'left_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Left Image'
+                        ]
+                    );
+                }
+                if ($connection->tableColumnExists($table, 'details_image') == true){
+                    $connection->changeColumn(
+                        $table,
+                        'details_image',
+                        'right_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Right Image'
+                        ]
+                    );
+                }
+                else{
+                    $connection->addColumn(
+                        $table,
+                        'right_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Right Image'
+                        ]
+                    );
+                }
+
+                $connection->changeColumn(
                     $table,
-                    'second_image',
+                    'image',
+                    'header_image',
                     [
                         'type' => Table::TYPE_TEXT,
                         'length' => 255,
                         'nullable' => true,
-                        'comment' => 'Second Image'
+                        'comment' => 'Header Image'
                     ]
                 );
             }
             $installer->endSetup();
         }
+        
     }
 }

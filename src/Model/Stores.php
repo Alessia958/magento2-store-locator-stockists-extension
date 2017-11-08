@@ -376,14 +376,14 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     }    
     
     /**
-     * set image
+     * set header image
      *
-     * @param $image
+     * @param $header_image
      * @return StockistInterface
      */
-    public function setImage($image)
+    public function setHeaderImage($header_image)
     {
-        return $this->setData(StockistInterface::IMAGE, $image);
+        return $this->setData(StockistInterface::HEADER_IMAGE, $header_image);
     }
 
     /**
@@ -653,13 +653,13 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     }
 
     /**
-     * Get details image
+     * Get right image
      *
      * @return string
      */
-    public function getDetailsImage()
+    public function getRightImage()
     {
-        return $this->getData(StockistInterface::DETAILS_IMAGE);
+        return $this->getData(StockistInterface::RIGHT_IMAGE);
     }
 
     /**
@@ -703,23 +703,23 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     }
     
     /**
-     * Get image
+     * Get header image
      *
      * @return string
      */
-    public function getImage()
+    public function getHeaderImage()
     {
-        return $this->getData(StockistInterface::IMAGE);
+        return $this->getData(StockistInterface::HEADER_IMAGE);
     }
     
     /**
-     * Get second image
+     * Get left image
      *
      * @return string
      */
-     public function getSecondImage()
+     public function getLeftImage()
      {
-         return $this->getData(StockistInterface::SECOND_IMAGE);
+         return $this->getData(StockistInterface::LEFT_IMAGE);
      }
 
         /**
@@ -810,17 +810,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      * @return bool|string
      * @throws LocalizedException
      */
-    public function getImageUrl()
+    public function getHeaderImageUrl()
     {
         $url = false;
-        $image = $this->getImage();
+        $image = $this->getHeaderImage();
         if ($image) {
             if (is_string($image)) {
                 $uploader = $this->uploaderPool->getUploader('image');
                 $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
             } else {
                 throw new LocalizedException(
-                    __('Something went wrong while getting the image url.')
+                    __('Something went wrong while getting the header image url.')
                 );
             }
         }
@@ -831,17 +831,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      * @return bool|string
      * @throws LocalizedException
      */
-    public function getDetailsImageUrl()
+    public function getRightImageUrl()
     {
         $url = false;
-        $image = $this->getDetailsImage();
+        $image = $this->getRightImage();
         if ($image) {
             if (is_string($image)) {
                 $uploader = $this->uploaderPool->getUploader('image');
                 $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
             } else {
                 throw new LocalizedException(
-                    __('Something went wrong while getting the image url.')
+                    __('Something went wrong while getting the right image url.')
                 );
             }
         }
@@ -852,17 +852,17 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
      * @return bool|string
      * @throws LocalizedException
      */
-     public function getSecondImageUrl()
+     public function getLeftImageUrl()
      {
          $url = false;
-         $image = $this->getSecondImage();
+         $image = $this->getLeftImage();
          if ($image) {
              if (is_string($image)) {
                  $uploader = $this->uploaderPool->getUploader('image');
                  $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
              } else {
                  throw new LocalizedException(
-                     __('Something went wrong while getting the second image url.')
+                     __('Something went wrong while getting the left image url.')
                  );
              }
          }
@@ -880,25 +880,25 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     }
 
     /**
-     * set details image
+     * set right image
      *
-     * @param $details_image
+     * @param $right_image
      * @return StockistInterface
      */
-    public function setDetailsImage($details_image)
+    public function setRightImage($right_image)
     {
-        return $this->setData(StockistInterface::DETAILS_IMAGE, $details_image);
+        return $this->setData(StockistInterface::RIGHT_IMAGE, $right_image);
     }
 
     /**
-     * set second image
+     * set left image
      *
-     * @param $second_image
+     * @param $left_image
      * @return StockistInterface
      */
-     public function setSecondImage($second_image)
+     public function setLeftImage($left_image)
      {
-         return $this->setData(StockistInterface::SECOND_IMAGE, $second_image);
+         return $this->setData(StockistInterface::LEFT_IMAGE, $left_image);
      }
 
     /**

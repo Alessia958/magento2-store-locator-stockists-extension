@@ -162,13 +162,13 @@ class Save extends Stores
                 unset($data['stockist_id']);
                 $stockist = $this->stockistFactory->create();
             }
-            $image = $this->getUploader('image')->uploadFileAndGetName('image', $data);
-            $data['image'] = $image;
-            $details_image = $this->getUploader('image')->uploadFileAndGetName('details_image', $data);
-            $data['details_image'] = $details_image;
-            $second_image = $this->getUploader('image')->uploadFileAndGetName('second_image', $data);
-            $data['second_image'] = $second_image;
-            
+            $header_image = $this->getUploader('image')->uploadFileAndGetName('header_image', $data);
+            $data['header_image'] = $image;
+            $right_image = $this->getUploader('image')->uploadFileAndGetName('right_image', $data);
+            $data['right_image'] = $right_image;
+            $left_image = $this->getUploader('image')->uploadFileAndGetName('left_image', $data);
+            $data['left_image'] = $left_image;
+
             if(isset($data['store_id'])) {
                 if(in_array('0',$data['store_id'])){
                     $data['store_id'] = '0';

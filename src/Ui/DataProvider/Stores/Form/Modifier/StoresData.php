@@ -58,23 +58,23 @@ class StoresData implements ModifierInterface
         /** @var $stockist \Limesharp\Stockists\Model\Stores */
         foreach ($items as $stockist) {
             $_data = $stockist->getData();
-            if (isset($_data['image'])) {
+            if (isset($_data['header_image'])) {
                 $image = [];
-                $image[0]['name'] = $stockist->getImage();
-                $image[0]['url'] = $stockist->getImageUrl();
-                $_data['image'] = $image;
+                $image[0]['name'] = $stockist->getHeaderImage();
+                $image[0]['url'] = $stockist->getHeaderImageUrl();
+                $_data['header_image'] = $image;
             }
-            if (isset($_data['details_image'])) {
+            if (isset($_data['right_image'])) {
                 $image = [];
-                $image[0]['name'] = $stockist->getDetailsImage();
-                $image[0]['url'] = $stockist->getDetailsImageUrl();
-                $_data['details_image'] = $image;
+                $image[0]['name'] = $stockist->getRightImage();
+                $image[0]['url'] = $stockist->getRightImageUrl();
+                $_data['right_image'] = $image;
             }
-			if (isset($_data['second_image'])) {
+			if (isset($_data['left_image'])) {
                 $image = [];
-                $image[0]['name'] = $stockist->getSecondImage();
-                $image[0]['url'] = $stockist->getSecondImageUrl();
-                $_data['second_image'] = $image;
+                $image[0]['name'] = $stockist->getLeftImage();
+                $image[0]['url'] = $stockist->getLeftImageUrl();
+                $_data['left_image'] = $image;
             }
             $stockist->setData($_data);
             $data[$stockist->getId()] = $_data;

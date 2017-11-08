@@ -40,7 +40,7 @@ interface StockistInterface
     const STATUS              = 'status';
     const TYPE                = 'type';
     const COUNTRY             = 'country';
-    const IMAGE               = 'image';
+    const HEADER_IMAGE        = 'header_image';
     const CREATED_AT          = 'created_at';
     const UPDATED_AT          = 'updated_at';
     const STORE_ID            = 'store_id';
@@ -49,7 +49,7 @@ interface StockistInterface
     const DESCRIPTION         = 'description';
     const DISTANCE            = 'distance';
     const STATION             = 'station';
-    const DETAILS_IMAGE       = 'details_image';
+    const RIGHT_IMAGE         = 'right_image';
     const EXTERNAL_LINK       = 'external_link';
     const BOOKABLE            = 'bookable';
     const ONLINE              = 'online';
@@ -64,7 +64,7 @@ interface StockistInterface
     const PRIORITY            = 'priority';
     const INFLUENTIAL         = 'influential';
     const PROMOTED         = 'promoted';
-    const SECOND_IMAGE       = 'second_image';
+    const LEFT_IMAGE       = 'left_image';
 
     /**
      * Get ID
@@ -117,18 +117,18 @@ interface StockistInterface
     public function getStation();
 
     /**
-     * Get store details image
+     * Get store right image
      *
      * @return string
      */
-    public function getDetailsImage();
+    public function getRightImage();
 
     /**
-     * Get store second image
+     * Get store left image
      *
      * @return string
      */
-     public function getSecondImage();
+     public function getLeftImage();
 
     /**
      * Get name
@@ -191,7 +191,7 @@ interface StockistInterface
      *
      * @return string
      */
-    public function getImage();
+    public function getHeaderImage();
     
     /**
      * Get latitude
@@ -274,12 +274,12 @@ interface StockistInterface
     public function setLink($link);
     
     /**
-     * set image
+     * set header image
      *
-     * @param $image
+     * @param $header_image
      * @return AuthorInterface
      */
-    public function setImage($image);
+    public function setHeaderImage($header_image);
     
     /**
      * set address
@@ -462,20 +462,20 @@ interface StockistInterface
     public function setIntro($intro);
 
     /**
-     * set store details image
+     * set store right image
      *
-     * @param $details_image
+     * @param $right_image
      * @return StockistInterface
      */
-    public function setDetailsImage($details_image);
+    public function setRightImage($right_image);
 
     /**
-     * set store second image
+     * set store left image
      *
-     * @param $second_image
+     * @param $left_image
      * @return StockistInterface
      */
-     public function setSecondImage($second_image);
+     public function setLeftImage($left_image);
 
     /**
      * set region

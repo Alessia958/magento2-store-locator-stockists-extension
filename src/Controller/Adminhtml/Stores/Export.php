@@ -115,7 +115,7 @@ class Export extends Stores
             $content .= '"email",';
             $content .= '"phone",';
             $content .= '"link",';
-            $content .= '"image",';
+            $content .= '"header_image",';
             $content .= '"latitude",';
             $content .= '"longitude",';
             $content .= '"status",';
@@ -135,13 +135,13 @@ class Export extends Stores
             $content .= '"station",';
             $content .= '"description",';
             $content .= '"intro",';
-            $content .= '"details_image",';
+            $content .= '"right_image",';
             $content .= '"distance",';  
             $content .= '"external_link",';
             $content .= '"priority",';
             $content .= '"influential",';
             $content .= '"promoted"';
-            $content .= '"second_image"';
+            $content .= '"left_image"';
             $content .= "\n";
 
             $fileName = 'store_bicego.csv';
