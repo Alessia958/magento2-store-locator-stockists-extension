@@ -67,7 +67,7 @@
     <type name="Limesharp\Stockists\Model\UploaderPool">
         <arguments>
             <argument name="uploaders" xsi:type="array">
-                <item name="image" xsi:type="string">LimesharpStockistsStoresImageUploader</item>
+                <item name="header_image" xsi:type="string">LimesharpStockistsStoresImageUploader</item>
                 <item name="file" xsi:type="string">LimesharpStockistsStoresFileUploader</item>
             </argument>
         </arguments>
