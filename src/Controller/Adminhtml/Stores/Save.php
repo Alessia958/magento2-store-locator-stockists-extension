@@ -163,7 +163,7 @@ class Save extends Stores
                 $stockist = $this->stockistFactory->create();
             }
             $header_image = $this->getUploader('image')->uploadFileAndGetName('header_image', $data);
-            $data['header_image'] = $image;
+            $data['header_image'] = $header_image;
             $right_image = $this->getUploader('image')->uploadFileAndGetName('right_image', $data);
             $data['right_image'] = $right_image;
             $left_image = $this->getUploader('image')->uploadFileAndGetName('left_image', $data);
