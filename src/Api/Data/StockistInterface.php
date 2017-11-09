@@ -65,7 +65,8 @@ interface StockistInterface
     const INFLUENTIAL         = 'influential';
     const PROMOTED         = 'promoted';
     const LEFT_IMAGE       = 'left_image';
-
+    const BOUTIQUE_SECTION_IMAGE       = 'boutique_section_image';
+    
     /**
      * Get ID
      *
@@ -130,6 +131,14 @@ interface StockistInterface
      */
      public function getLeftImage();
 
+    /**
+     * Get boutique section image
+     *
+     * @return string
+     */
+    public function getBoutiqueSectionImage();
+
+    
     /**
      * Get name
      *
@@ -281,6 +290,15 @@ interface StockistInterface
      */
     public function setHeaderImage($header_image);
     
+    /**
+     * set boutique section image
+     *
+     * @param $boutique_section_image
+     * @return AuthorInterface
+     */
+     public function setBoutiqueSectionImage($boutique_section_image);
+     
+
     /**
      * set address
      *

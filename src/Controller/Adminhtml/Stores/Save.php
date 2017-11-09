@@ -168,6 +168,8 @@ class Save extends Stores
             $data['right_image'] = $right_image;
             $left_image = $this->getUploader('image')->uploadFileAndGetName('left_image', $data);
             $data['left_image'] = $left_image;
+            $boutique_section_image = $this->getUploader('image')->uploadFileAndGetName('boutique_section_image', $data);
+            $data['boutique_section_image'] = $boutique_section_image;
 
             if(isset($data['store_id'])) {
                 if(in_array('0',$data['store_id'])){

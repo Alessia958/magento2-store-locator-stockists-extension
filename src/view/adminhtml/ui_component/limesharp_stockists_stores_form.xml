@@ -349,6 +349,23 @@
                 </item>
             </argument>
         </field>
+        <field name="boutique_section_image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">stores</item>
+                    <item name="label" xsi:type="string" translate="true">Boutique Section Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Limesharp_Stockists/image-preview</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="stockists/stores_image/upload/field/boutique_section_image"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
         <field name="intro">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

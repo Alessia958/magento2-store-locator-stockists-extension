@@ -826,7 +826,47 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
         }
         return $url;
     }
+    
+    /**
+     * get boutique section image
+     *
+     * @return string
+     */
+     public function getBoutiqueSectionImage()
+     {
+         return $this->getData(StockistInterface::BOUTIQUE_SECTION_IMAGE);
+     }
+        /**
+     * set boutique section image
+     *
+     * @param $boutique_section_image
+     * @return StockistInterface
+     */
+     public function setBoutiqueSectionImage($boutique_section_image)
+     {
+         return $this->setData(StockistInterface::BOUTIQUE_SECTION_IMAGE, $boutique_section_image);
+     }
 
+    /**
+     * @return bool|string
+     * @throws LocalizedException
+     */
+     public function getBoutiqueSectionImageUrl()
+     {
+         $url = false;
+         $image = $this->getBoutiqueSectionImage();
+         if ($image) {
+             if (is_string($image)) {
+                 $uploader = $this->uploaderPool->getUploader('image');
+                 $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
+             } else {
+                 throw new LocalizedException(
+                     __('Something went wrong while getting the boutique image section url.')
+                 );
+             }
+         }
+         return $url;
+     }
     /**
      * @return bool|string
      * @throws LocalizedException

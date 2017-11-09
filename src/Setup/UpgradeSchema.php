@@ -256,19 +256,43 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         ]
                     );
                 }
-
-                $connection->changeColumn(
+                if ($connection->tableColumnExists($table, 'image') == true){
+                    $connection->changeColumn(
+                        $table,
+                        'image',
+                        'header_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Header Image'
+                        ]
+                    );
+                }
+                else{
+                    $connection->addColumn(
+                        $table,
+                        'header_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Header Image'
+                        ]
+                    );
+                }
+                $connection->addColumn(
                     $table,
-                    'image',
-                    'header_image',
+                    'boutique_section_image',
                     [
                         'type' => Table::TYPE_TEXT,
                         'length' => 255,
                         'nullable' => true,
-                        'comment' => 'Header Image'
+                        'comment' => 'Boutique Section Image'
                     ]
                 );
             }
+
             $installer->endSetup();
         }
         
