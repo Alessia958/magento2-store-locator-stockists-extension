@@ -281,16 +281,54 @@ class UpgradeSchema implements UpgradeSchemaInterface
                         ]
                     );
                 }
-                $connection->addColumn(
-                    $table,
-                    'boutique_section_image',
-                    [
-                        'type' => Table::TYPE_TEXT,
-                        'length' => 255,
-                        'nullable' => true,
-                        'comment' => 'Boutique Section Image'
-                    ]
-                );
+                if ($connection->tableColumnExists($table, 'boutique_section_image') ===false){
+                    $connection->addColumn(
+                        $table,
+                        'boutique_section_image',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 255,
+                            'nullable' => true,
+                            'comment' => 'Boutique Section Image'
+                        ]
+                    );
+                }
+                if ($connection->tableColumnExists($table, 'description_en') ===false){
+                    $connection->addColumn(
+                        $table,
+                        'description_en',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 1024,
+                            'nullable' => true,
+                            'comment' => 'Description EN'
+                        ]
+                    );
+                }
+                if ($connection->tableColumnExists($table, 'short_description_en') ===false){
+                    $connection->addColumn(
+                        $table,
+                        'short_description_en',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 1024,
+                            'nullable' => true,
+                            'comment' => 'Short description EN'
+                        ]
+                    );
+                }
+                if ($connection->tableColumnExists($table, 'intro') ===true){
+                    $connection->modifyColumn(
+                        $table,
+                        'intro',
+                        [
+                            'type' => Table::TYPE_TEXT,
+                            'length' => 1024,
+                            'nullable' => true,
+                            'comment' => 'Short description'
+                        ]
+                    );
+                }
             }
 
             $installer->endSetup();

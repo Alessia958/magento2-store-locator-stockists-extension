@@ -221,6 +221,28 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
         return $this->setData(StockistInterface::DESCRIPTION, $description);
     }
 
+        /**
+     * set description_en
+     *
+     * @param $description_en
+     * @return StockistInterface
+     */
+     public function setDescriptionEn($description_en)
+     {
+         return $this->setData(StockistInterface::DESCRIPTION_EN, $description_en);
+     }
+
+        /**
+     * set short_description_en
+     *
+     * @param $short_description_en
+     * @return StockistInterface
+     */
+     public function setShortDescriptionEn($short_description_en)
+     {
+         return $this->setData(StockistInterface::SHORT_DESCRIPTION_EN, $short_description_en);
+     }
+
     /**
      * set station
      *
@@ -631,6 +653,27 @@ class Stores extends AbstractModel implements StockistInterface, RoutableInterfa
     {
         return $this->getData(StockistInterface::DESCRIPTION);
     }
+
+        /**
+     * Get description_en
+     *
+     * @return string
+     */
+     public function getDescriptionEn()
+     {
+         return $this->getData(StockistInterface::DESCRIPTION_EN);
+     }
+
+
+             /**
+     * Get short_description_en
+     *
+     * @return string
+     */
+     public function getShortDescriptionEn()
+     {
+         return $this->getData(StockistInterface::SHORT_DESCRIPTION_EN);
+     }
 
     /**
      * Get station

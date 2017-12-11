@@ -47,6 +47,8 @@ interface StockistInterface
     const SCHEDULE            = 'schedule';
     const INTRO               = 'intro';
     const DESCRIPTION         = 'description';
+    const DESCRIPTION_EN       = 'description_en';
+    const SHORT_DESCRIPTION_EN       = 'short_description_en';    
     const DISTANCE            = 'distance';
     const STATION             = 'station';
     const RIGHT_IMAGE         = 'right_image';
@@ -95,6 +97,20 @@ interface StockistInterface
      * @return string
      */
     public function getDescription();
+
+        /**
+     * Get description_en
+     *
+     * @return string
+     */
+     public function getDescriptionEn();
+
+             /**
+     * Get short_description_en
+     *
+     * @return string
+     */
+     public function getShortDescriptionEn();
 
     /**
      * Get external link
@@ -446,6 +462,24 @@ interface StockistInterface
      */
 
     public function setDescription($description);
+
+        /**
+     * set description_en
+     *
+     * @param $description_en
+     * @return StockistInterface
+     */
+
+     public function setDescriptionEn($description_en);
+
+         /**
+     * set short_description_en
+     *
+     * @param $short_description_en
+     * @return StockistInterface
+     */
+
+    public function setShortDescriptionEn($short_description_en);
 
     /**
      * set distance
